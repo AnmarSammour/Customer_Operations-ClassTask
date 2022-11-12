@@ -1,0 +1,20 @@
+﻿@model Customer_Operations.Models.Entities.Customers
+
+@{
+    ViewBag.Title = "delete";
+}
+<h2>Delete</h2>
+<h3>Are you sure you want to delete this?</h3>
+<p><b>Customer Name: </b>@Html.DisplayFor(model => model.CustomerName)</p>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary" />
+        </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List","Index")
+</div>

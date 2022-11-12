@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Customer_Operations.Models.Entities.Customers>
+
+<h2>Customers</h2>
+<table style="width:100%" border="1px solid black">
+    <thead> 
+        <th >@Html.DisplayNameFor(model => model.CustomerID)</th>
+        <th>@Html.DisplayNameFor(model => model.CustomerName)</th>
+        <th>@Html.DisplayNameFor(model => model.CustomerNumber)</th>
+        <th>@Html.DisplayNameFor(model => model.CustomerAddress)</th>
+        <th>@Html.DisplayNameFor(model => model.CustomerMobileNumber)</th>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+       {
+           <tr style="background-color: lightgray;border-bottom: 1px solid gray;">
+               <td style="padding-right: 100px ;padding-left: 10px;">
+                    @Html.DisplayFor(model => item.CustomerID)
+               </td>
+                <td>
+                    @Html.DisplayFor(model => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.CustomerNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.CustomerAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.CustomerMobileNumber)
+                </td>
+                <td>
+                    @Html.ActionLink("Update","Update",new{customerId=item.CustomerID})
+                    </td>
+                    <td>
+                    @Html.ActionLink("Delete","Delete",new{customerId=item.CustomerID})
+                </td>
+
+           </tr>
+       }
+    </tbody>
+</table>
+<br/>
+<div>
+    @Html.ActionLink("Create item","Create")
+</div>
